@@ -65,6 +65,20 @@ const ProfileScreen = () => {
         <Text style={styles.profileTab}>Likes</Text>
       </View>
 
+      <View style={styles.tweet}>
+        <Image
+          source={{ uri: 'https://i.pravatar.cc/150?img=4' }}
+          style={styles.tweetImage}
+        />
+        <View style={{ flex: 1 }}>
+          <Text style={styles.tweetName}>
+            John <Text style={styles.tweetHandle}>@JohnDoe · 1h</Text>
+          </Text>
+          <Text style={styles.tweetText}>
+            This is my first post on X.
+          </Text>
+        </View>
+      </View>
 
       
       </View>
@@ -189,5 +203,32 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     borderBottomColor: '#1DA1F2',
     borderBottomWidth: 2,
-  }
+  },
+  tweet: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: 16,
+    borderBottomColor: '#222',
+    borderBottomWidth: 1,
+  },
+  tweetImage: {
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    marginRight: 12,
+  },
+  tweetName: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  tweetHandle: {
+    fontWeight: 'normal',
+    color: '#aaa',
+  },
+  tweetText: {
+    color: '#fff',
+    marginTop: 4,
+    fontSize: 15,
+  },
 })
