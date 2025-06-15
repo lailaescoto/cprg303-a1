@@ -1,5 +1,5 @@
 import { FontAwesome } from '@expo/vector-icons';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 const ProfileScreen = () => {
@@ -11,12 +11,23 @@ const ProfileScreen = () => {
         style={styles.banner}
       />
 
+
       {/* Profile Picture */}
       <View style={styles.profilePicContainer}>
         <Image
           source={{ uri: 'https://i.pravatar.cc/150?img=4' }}
           style={styles.profilePic}
         />
+
+        {/* Buttons */}
+        <View style={styles.buttonRow}>
+          <TouchableOpacity style={styles.iconButton}>
+            <Text style={styles.iconButtonText}>...</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.actionButton}>
+            <Text style={styles.buttonText}>Follow</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       
       {/* Name and Handle */}
@@ -47,6 +58,8 @@ const ProfileScreen = () => {
           <Text style={styles.statLabel}>Followers</Text>
         </View>
       </View>
+
+      
       
       </View>
       
@@ -65,20 +78,44 @@ const styles = StyleSheet.create({
     height: 140,
   },
   profilePicContainer: {
-    position: 'absolute',
-    top: 90,
-    left: 16,
-    borderRadius: 50,
-    borderWidth: 4,
-    borderColor: '#000',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 16,
+    paddingHorizontal: 16,
   },
   profilePic: {
     width: 100,
     height: 100,
     borderRadius: 50,
   },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconButton: {
+    marginRight: 8,
+    borderColor: '#555',
+    borderWidth: 1,
+    borderRadius: 999,
+    padding: 8,
+  },
+  iconButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  actionButton: {
+    backgroundColor: '#fff',
+    borderRadius: 999,
+    paddingHorizontal: 16,
+    paddingVertical: 6,
+  },
+  buttonText: {
+    color: '#000',
+    fontWeight: 'bold',
+  },
   nameHandle: {
-    marginTop: 60,
+    marginTop: 20,
     marginLeft: 16,
   },
   name: {
