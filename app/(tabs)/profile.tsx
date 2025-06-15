@@ -1,4 +1,6 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
 
 const ProfileScreen = () => {
   return (
@@ -19,8 +21,31 @@ const ProfileScreen = () => {
       
       {/* Name and Handle */}
       <View style={styles.nameHandle}>
-        <Text style={styles.name}>Wikipedia</Text>
-        <Text style={styles.handle}>@Wikipedia</Text>
+        <Text style={styles.name}>John</Text>
+        <Text style={styles.handle}>@JohnDoe</Text>
+      </View>
+
+      {/* Bio */}
+      <Text style={styles.bio}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      </Text>
+
+      {/* Stats */}
+      <View style={styles.statsContainer}>
+
+        {/* Joined Date */}
+        <View style={styles.joinedContainer}>
+          <FontAwesome name="calendar" size={16} color="#aaa" />
+          <Text style={styles.joinedText}> Joined October 2009</Text>
+        </View>
+
+        <View style={styles.statsRow}>
+          <Text style={styles.statNumber}>699 </Text>
+          <Text style={styles.statLabel}>Following</Text>
+
+          <Text style={[styles.statNumber, { marginLeft: 16 }]}>575.3K </Text>
+          <Text style={styles.statLabel}>Followers</Text>
+        </View>
       </View>
       
       </View>
@@ -65,5 +90,43 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#aaa',
     marginTop: 4,
+  },
+  bio: {
+    color: '#fff',
+    marginLeft: 16,
+    marginTop: 12,
+    fontSize: 15,
+    marginRight: 16,
+  },
+  joinedContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+    marginLeft: 3,
+  },
+  joinedText: {
+    color: '#aaa',
+    fontSize: 14,
+    marginLeft: 6,
+  },
+  statsContainer: {
+    marginLeft: 16,
+    marginTop: 16,
+  },
+  statsRow: {
+    flexDirection: 'row',
+    marginLeft: 3,
+  },
+  stat: {
+    marginRight: 24,
+  },
+  statNumber: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  statLabel: {
+    color: '#aaa',
+    fontSize: 14,
   }
 })
