@@ -59,7 +59,13 @@ const ProfileScreen = () => {
         </View>
       </View>
 
-      
+      <View style={styles.profileTabs}>
+        <Text style={[styles.profileTab, styles.activeProfileTab]}>Tweets</Text>
+        <Text style={styles.profileTab}>Media</Text>
+        <Text style={styles.profileTab}>Likes</Text>
+      </View>
+
+
       
       </View>
       
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: -10,
     paddingHorizontal: 16,
   },
   profilePic: {
@@ -108,7 +114,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 999,
     paddingHorizontal: 16,
-    paddingVertical: 6,
+    paddingVertical: 8,
   },
   buttonText: {
     color: '#000',
@@ -165,5 +171,23 @@ const styles = StyleSheet.create({
   statLabel: {
     color: '#aaa',
     fontSize: 14,
+  },
+  profileTabs: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderBottomColor: '#222',
+    borderBottomWidth: 1,
+    paddingBottom: 8,
+    marginTop: 16,
+  },
+  profileTab: {
+    color: '#888',
+    fontSize: 16,
+  },
+  activeProfileTab: {
+    color: '#fff',
+    fontWeight: 'bold',
+    borderBottomColor: '#1DA1F2',
+    borderBottomWidth: 2,
   }
 })
