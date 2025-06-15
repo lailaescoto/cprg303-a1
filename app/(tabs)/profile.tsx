@@ -3,11 +3,21 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 const ProfileScreen = () => {
-  return (
+  return (    
     <View>
+
+    <View style={styles.header}>
+      <Text style={styles.backButton}>{'<'}</Text>
+      <View>
+        <Text style={styles.headerName}>Jane</Text>
+        <Text style={styles.headerSub}>1 post</Text>
+      </View>
+    </View>
+
+
     {/* Banner / Header Image */}
       <Image
-        source={{ uri: 'https://i.pravatar.cc/800?img=12' }}
+        source={{ uri: 'https://i.pravatar.cc/800?img=20' }}
         style={styles.banner}
       />
 
@@ -15,7 +25,7 @@ const ProfileScreen = () => {
       {/* Profile Picture */}
       <View style={styles.profilePicContainer}>
         <Image
-          source={{ uri: 'https://i.pravatar.cc/150?img=4' }}
+          source={{ uri: 'https://i.pravatar.cc/40?img=10' }}
           style={styles.profilePic}
         />
 
@@ -32,8 +42,8 @@ const ProfileScreen = () => {
       
       {/* Name and Handle */}
       <View style={styles.nameHandle}>
-        <Text style={styles.name}>John</Text>
-        <Text style={styles.handle}>@JohnDoe</Text>
+        <Text style={styles.name}>Jane</Text>
+        <Text style={styles.handle}>@JaneDoe</Text>
       </View>
 
       {/* Bio */}
@@ -67,12 +77,12 @@ const ProfileScreen = () => {
 
       <View style={styles.tweet}>
         <Image
-          source={{ uri: 'https://i.pravatar.cc/150?img=4' }}
+          source={{ uri: 'https://i.pravatar.cc/40?img=10' }}
           style={styles.tweetImage}
         />
         <View style={{ flex: 1 }}>
           <Text style={styles.tweetName}>
-            John <Text style={styles.tweetHandle}>@JohnDoe · 1h</Text>
+            Jane <Text style={styles.tweetHandle}>@JaneDoe · 1h</Text>
           </Text>
           <Text style={styles.tweetText}>
             This is my first post on X.
@@ -89,9 +99,33 @@ const ProfileScreen = () => {
 export default ProfileScreen
 
 const styles = StyleSheet.create({
-    container: {
+  container: {
     flex: 1,
     backgroundColor: '#000',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 60,
+    paddingHorizontal: 16,
+    paddingBottom: 20,
+    backgroundColor: '#000',
+    borderBottomColor: '#222',
+    borderBottomWidth: 1,
+  },
+  backButton: {
+    fontSize: 24,
+    color: '#fff',
+    marginRight: 20,
+  },
+  headerName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  headerSub: {
+    fontSize: 14,
+    color: '#aaa',
   },
   banner: {
     width: '100%',
